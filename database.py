@@ -3,7 +3,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Conexión a base de datos SQLite (puedes cambiarla por MySQL/Postgres si quieres)
-SQLALCHEMY_DATABASE_URL = "sqlite:///./tareas.db"
+SQLALCHEMY_DATABASE_URL = "sqlite:///./db.sqlite3"
+
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
