@@ -2,8 +2,8 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
-from app import models, database
-from app.database import engine
+import models, database
+from database import engine
 from passlib.context import CryptContext
 
 # Crear las tablas en la base de datos
