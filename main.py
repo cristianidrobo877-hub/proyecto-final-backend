@@ -14,15 +14,14 @@ app = FastAPI(title="API de Tareas", version="1.0")
 # Seguridad
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-# Configuración CORS (para conectar con React)
-// src/api.js o donde configures Axios
-import axios from "axios";
+from fastapi.middleware.cors import CORSMiddleware
 
-const API_URL = "https://proyecto-final-backend-1nh4.onrender.com";
-
-export const api = axios.create({
-  baseURL: API_URL,
-});
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://proyecto-final-frontend-tau-ochre.vercel.app"],  # dominio de tu frontend
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # ---- Modelos Pydantic ----
